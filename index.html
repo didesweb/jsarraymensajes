@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<!-- Didesweb -->  
+<!-- Diseño y desarrollo web -->  
+<!-- http://didesweb.com/-->  
+<!-- Este obra está protegida bajo licencia Creative Commons Attribution --> 
+ <html lang="es">
+ <head>
+	<meta charset="UTF-8">
+	<title>Didesweb, array de mensajes automáticos</title>
+	<style>
+	.verde,.azul,.rojo,.amarillo {
+		text-align: center;
+		width: 200px;
+		box-shadow: 2px 2px 2px #CCCCCC;
+		-moz-box-shadow: 2px 2px 2px #CCCCCC;
+		-webkit-box-shadow: 2px 2px 2px #CCCCCC;
+	}
+	.verde {
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border: 1px solid #006600;
+		background-color: #9EFF9E;
+		color: #006600;
+	}
+	.azul {
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border: 1px solid #006600;
+		background-color: #66CCFF;
+		color: #006600;
+	}
+	.rojo {
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border: 1px solid #FF0000;
+		background-color: #FFCCCC;
+		color: #FF0000;
+	}
+	.amarillo {
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border: 1px solid #CCCC00;
+		background-color: #FFFFCC;
+		color: #CCCC00;
+	}
+	</style>
+</head>
+<body onload="cambiar_contenido()">
+	<h1>Didesweb, array de mensajes automáticos</h1>
+	<script>
+		//variables
+		var tiempo=3000
+		var contenido=new Array(4)
+		contenido[0]="<div class='verde'><p>Color del texto #006600</p><p>Color del fondo #9EFF9E</p></div>"
+		contenido[1]="<div class='azul'><p>Color del texto #006600</p><p>Color del fondo #66CCFF</p></div>"
+		contenido[2]="<div class='rojo'><p>Color del texto #FF0000</p><p>Color del fondo #FFCCCC</p></div>"
+		contenido[3]="<div class='amarillo'><p>Color del texto #CCCC00</p><p>Color del fondo #FFFFCC</p></div>"
+		var indice_contenido=0
+		//funcion
+		function cambiar_contenido(){
+			if (indice_contenido>=contenido.length)
+				indice_contenido=0
+				document.getElementById("contenedorjs").innerHTML=contenido[indice_contenido]
+				indice_contenido++
+				setTimeout("cambiar_contenido()",tiempo)
+		}
+		document.write('<div id="contenedorjs"></div>')
+		
+	</script>
+</body>
+</html>
